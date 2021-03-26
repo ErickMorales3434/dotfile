@@ -1,0 +1,14 @@
+{
+    "window.menuBarVisibility": "compact",
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "Dobri Next -A02- Bunker",
+    "editor.fontFamily": "'Monaco', 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid','Consolas', 'Courier New', monospace",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "editor.fontLigatures": null,
+    "workbench.startupEditor": "newUntitledFile"
+}

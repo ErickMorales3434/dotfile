@@ -1,0 +1,326 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   
+;
+;   
+;
+;==========================================================
+
+
+[colors]
+background = ${xrdb:color0:#222}
+foreground = #ffffff
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+
+;---------------------------------------------------
+[bar/bar]
+
+;background = #2d2c2c
+;background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = SFMono Nerd Font:style=Regular:pixelsize=10:antialias=true;1
+font-1 = SFMono Nerd Font:style=Regular:pixelsize=10:antialias=true;0
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=9;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-5 = "unifont:fontformat=truetype:size=16:antialias=false;1"
+
+wm-restack = bspwm
+override-redirect = false
+fixed-center = true
+width = 100%
+height = 20
+;---Redondeo de extremos de la barra
+radius = 0 
+;--------
+offset-y = 2
+offset-x = 0%
+padding = 0
+line-size = 3
+
+
+
+modules-left = space menu space bspwm
+modules-center =  
+modules-right = xkeyboard space pulseaudio space backlight space battery space wifi space date space myscript separador 
+tray-position = right
+tray-maxsize = 10
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-radius = 5
+dim-value = 0.8
+;------------------Inicio de modulos -----------------------
+
+;       v     
+ 
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+
+
+enable-click = true
+enable-scroll = true
+icon-default = 
+format = <label-state>
+# format-padding = 5
+label-monitor = %name%
+#tokens: %index% %icon% %name%
+label-active = %name%
+label-active-underline= #FFC300
+label-active-padding = 1.5
+;label-active-foreground = #FF5733
+label-active-background = #DF01D7F
+
+
+label-occupied = %name% 
+label-occupied-foreground = #DF0174
+;label-occupied-background = #8A0829
+label-occupied-padding = 1.5
+
+label-urgent = %name%
+label-urgent-padding = 1.5
+label-urgent-foreground = #ff00ff
+
+label-empty = %name%
+label-empty-padding = 1.5
+;label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
+;---------------------------------------------------------------------
+
+[module/space]
+type = custom/text
+content = "  "
+
+[module/microfono]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/mic.bash
+tail = true
+format = <label>
+label = %output%
+click-left = kill -USR1 %pid%
+
+[module/cmus]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/cmus.bash
+tail = false
+format = <label>
+label =  %output%
+label-foreground = #DAF7A6
+
+
+[module/separador]
+type =custom/text
+content = " | "
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 97
+
+
+format-charging = <animation-charging> <label-charging>
+;format-charging-foreground = #ec18f0 
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-foreground = #ec18f0
+
+format-full =  full
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+
+[module/alsa]
+type = inernal/alsa
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+;ramp-volume-foreground = #FF0040
+label-volume-foreground = #FFFFFF
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+label-muted =  
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+;
+
+; Right and Middle click
+click-right = pavucontrol
+; click-middle = 
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " "
+label = %layout%
+format-prefix-foreground = #FFFF00
+
+
+[module/power]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+label-open = ""
+;label-open-foreground = #8A0808
+label-close = cancel
+;label-exec= clearine
+label-close-foreground = ${colors.color2}
+label-separator = |
+label-separator-foreground = ${colors.foreground}
+
+;menu-0-0 = clearine
+;menu-0-0-exec = slock
+menu-0-0 = clearine
+menu-0-0-exec = clearine
+;menu-0-1 = Reiniciar
+;menu-0-1-exec = reboot
+
+
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+enable-scroll = true
+format =  <label>
+format-padding = 1
+label = %percentage%%
+;format-foreground = #0000FF
+
+[module/date]
+type = internal/date
+; Seconds to sleep between updates
+; Default: 1.0
+interval = 1.0
+
+; See "https://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+;;;;;;;;date = %d-%m-%Y%
+
+; Optional time format
+time = %H:%M
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+; Available tags:
+;   <label> (default)
+format = 🕓 <label>
+
+; Available tokens:
+;   %date%
+;   %time%
+;Default: %date%
+label = %date%  %time%
+label-font = 0
+
+
+[module/wifi]
+type = internal/network
+interface = wlo1
+interval = 1.0
+ping-interval = 10
+
+format-disconnected = <label-disconnected>
+label-disconnected=  
+format-disconnected-padding=1
+
+
+
+format-connected=<label-connected>
+label-connected =  %essid%
+format-connected-padding=1
+
+#label-disconnected-background = #07EE9B 
+;label-connected-foreground = #58FAF4
+
+[module/myscript]
+type=custom/text
+content = 
+content-margin = 0
+click-left=clearine
+;The script above is to be found here : https://github.com/ngynLk/scripts
+
+[module/menu]
+type=custom/text
+content = 
+content-margin = 0
+click-left= rofi -modi run -show drun -show-icons \-config /home/erick/.config/rofi/slate.rasi
+;
+[settings]
+pseudo-transparency = true
+screenchange-reload = true
+
+[global/wm]
+margin-top = 1
+margin-bottom = 1
+
+

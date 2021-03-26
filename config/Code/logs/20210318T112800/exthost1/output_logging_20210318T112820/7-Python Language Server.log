@@ -1,0 +1,21 @@
+Failed to handle notification workspace/didChangeConfiguration: Object(settings=Object(python=Object(diagnostics=Object(sourceMapsEnabled=False), autoComplete=Object(addBrackets=False, extraPaths=[], showAdvancedMembers=True, typeshedPaths=[]), autoUpdateLanguageServer=True, logging=Object(level='error'), experiments=Object(enabled=True, optInto=[], optOutFrom=[]), defaultInterpreterPath='python', disableInstallationCheck=False, envFile='${workspaceFolder}/.env', formatting=Object(autopep8Args=[], autopep8Path='autopep8', provider='autopep8', blackArgs=[], blackPath='black', yapfArgs=[], yapfPath='yapf'), globalModuleInstallation=False, jediMemoryLimit=0, jediPath='', languageServer='Jedi', analysis=Object(diagnosticPublishDelay=1000, errors=[], warnings=[], information=[], disabled=[], typeshedPaths=[], cacheFolderPath='', memory=Object(keepLibraryAst=False), logLevel='Error', symbolsHierarchyDepthLimit=10), linting=Object(enabled=True, flake8Args=[], flake8CategorySeverity=Object(E='Error', F='Error', W='Warning'), flake8Enabled=False, flake8Path='flake8', ignorePatterns=['.vscode/*.py', '**/site-packages/**/*.py'], lintOnSave=True, maxNumberOfProblems=100, banditArgs=[], banditEnabled=False, banditPath='bandit', mypyArgs=['--ignore-missing-imports', '--follow-imports=silent', '--show-column-numbers'], mypyCategorySeverity=Object(error='Error', note='Information'), mypyEnabled=False, mypyPath='mypy', pycodestyleArgs=[], pycodestyleCategorySeverity=Object(E='Error', W='Warning'), pycodestyleEnabled=False, pycodestylePath='pycodestyle', prospectorArgs=[], prospectorEnabled=False, prospectorPath='prospector', pydocstyleArgs=[], pydocstyleEnabled=False, pydocstylePath='pydocstyle', pylamaArgs=[], pylamaEnabled=False, pylamaPath='pylama', pylintArgs=[], pylintCategorySeverity=Object(convention='Information', error='Error', fatal='Error', refactor='Hint', warning='Warning'), pylintEnabled=True, pylintPath='pylint', pylintUseMinimalCheckers=True), pythonPath='python', condaPath='', pipenvPath='pipenv', poetryPath='poetry', sortImports=Object(args=[], path=''), tensorBoard=Object(logDirectory=''), terminal=Object(activateEnvironment=True, executeInFileDir=False, launchArgs=[], activateEnvInCurrentTerminal=False), testing=Object(cwd=None, debugPort=3000, nosetestArgs=[], nosetestsEnabled=False, nosetestPath='nosetests', promptToConfigure=True, pytestArgs=[], pytestEnabled=False, pytestPath='pytest', unittestArgs=['-v', '-s', '.', '-p', '*test*.py'], unittestEnabled=False, autoTestDiscoverOnSaveEnabled=True), useIsolation=True, venvFolders=[], venvPath='', workspaceSymbols=Object(ctagsPath='ctags', enabled=False, exclusionPatterns=['**/site-packages/**'], rebuildOnFileSave=True, rebuildOnStart=True, tagFilePath='${workspaceFolder}/.vscode/tags'), insidersChannel='off', showStartPage=True)))
+Traceback (most recent call last):
+  File "/home/erick/.vscode/extensions/ms-python.python-2021.3.658691958/pythonFiles/lib/python/pygls/protocol.py", line 279, in _get_handler
+    return self.fm.builtin_features[feature_name]
+KeyError: 'workspace/didChangeConfiguration'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/erick/.vscode/extensions/ms-python.python-2021.3.658691958/pythonFiles/lib/python/pygls/protocol.py", line 282, in _get_handler
+    return self.fm.features[feature_name]
+KeyError: 'workspace/didChangeConfiguration'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/erick/.vscode/extensions/ms-python.python-2021.3.658691958/pythonFiles/lib/python/pygls/protocol.py", line 306, in _handle_notification
+    handler = self._get_handler(method_name)
+  File "/home/erick/.vscode/extensions/ms-python.python-2021.3.658691958/pythonFiles/lib/python/pygls/protocol.py", line 284, in _get_handler
+    raise JsonRpcMethodNotFound.of(feature_name)
+pygls.exceptions.JsonRpcMethodNotFound

@@ -1,0 +1,13 @@
+[2021-03-25 18:01:25.586] [exthost] [info] extension host started
+[2021-03-25 18:01:25.586] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":false,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"onAuthenticationRequest:microsoft"}
+[2021-03-25 18:01:25.586] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/microsoft-authentication/dist/extension.js
+[2021-03-25 18:01:25.586] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css {"startup":true,"extensionId":{"value":"ecmel.vscode-html-css","_lower":"ecmel.vscode-html-css"},"activationEvent":"*"}
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/erick/.vscode/extensions/ecmel.vscode-html-css-1.10.2/dist/extension.js
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer {"startup":true,"extensionId":{"value":"ritwickdey.LiveServer","_lower":"ritwickdey.liveserver"},"activationEvent":"*"}
+[2021-03-25 18:01:25.587] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/erick/.vscode/extensions/ritwickdey.liveserver-5.6.1/out/src/extension
+[2021-03-25 18:01:25.587] [exthost] [info] extension host terminating: parent process 2334 does not exist anymore: kill ESRCH (code: ESRCH) (errno: ESRCH)
+[2021-03-25 18:01:26.587] [exthost] [info] exiting with code 0

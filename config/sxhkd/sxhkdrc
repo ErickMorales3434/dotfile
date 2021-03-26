@@ -1,0 +1,145 @@
+## Iniciar terminal
+super + Return
+	alacritty	
+
+## Iniciar Rofi
+alt + d
+	rofi -modi run -show drun -show-icons \-config /home/erick/.config/rofi/slate.rasi
+
+## Control de Volumen (instalar alsa-utils --ejecutar alsamixer y activar el sonido) 
+XF86Audio{RaiseVolume,LowerVolume}
+	amixer {-q set Master 5%+,-q set Master 5%-}
+XF86AudioMute
+	amixer -q -D pulse set Master toggle
+	
+## Recargar configuracion de atajos de teclado-sxhkd
+super + s
+	pkill -USR1 -x sxhkd
+
+## Cerrar sesion de SBPWM
+#super + control + Delete
+#	killall vanela; bspc quit
+
+## Recargar condiguracion de BSPWM
+super + shift + f
+	killall vanela; bspwmrc
+
+#Recargar Bspwm Bspwmrc
+super + control + r
+	bspc wm -r
+
+## Cerrar aplicacion activa
+super + {_,shift + }q
+	bspc node {-c,-k}
+
+## Cerrar aplicacion activa (alternativa de tecla q)
+alt + F4
+	bspc node -c
+
+## Pantalla completa - pantalla normal
+super + f
+	bspc desktop -l next
+	
+## Crear nuevo espacio de trabajo y cancelar con #r Split horizontal, split vertical, or cancel
+super + {h,v,r}
+	bspc node -p {east,south,cancel}
+
+## Poner ventana seleccionada como flotante y viceversa
+super + space
+    bspc node -t "~"{floating,tiled}
+
+## Cambia de posicion la ventana seleccionada
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+## Cambia de espacio de trabajo 
+super + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+## Cambia de ventana a la anterior usada
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+## Manda la ventana activa a un nuevo espacio de trabajo
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+## expande la ventana seleccionada cuando este en flotante
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Mueve la ventana flotante seleccionada
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Usa el scroll del maus para alejar o acercar las ventanas
+super + button{4,5}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+
+
+# Captura de patalla 
+Print
+	scrot -q 100 -d 3 ~/Imágenes/Screenshot-$(date "+%d-%m-%Y-%H:%M:%S").png
+  
+# Control de brillo de panatalla (instalar brightnessctl)
+XF86MonBrightnessUp
+	brightnessctl set +5%
+XF86MonBrightnessDown
+	brightnessctl set 5%-
+
+
+#--------Atajo de aplicaciones -------------------------
+#firefox
+alt + f
+	firefox
+
+#telegram
+alt + t
+	telegram-desktop
+
+#vlc
+alt + v
+    vlc
+
+#visual studio code
+alt + c
+	code
+
+#nautilus
+alt + e
+	nautilus
+
+#obs-studio
+alt + o
+  obs
+
+# gparted
+alt + g
+	'sudo gparted'
+
+#mostrar y ocultar polybar
+alt + m
+	{$HOME/.config/polybar/launch.sh ,killall polybar && bspc config top_padding 0}
+
+
+#pywal reconoce el color del fondo de pantalla y cambia los colores de la terminal
+# wal -i "ruta de la imagen"
+
+#--------CONTROLES DE AUDIO MUSICA --------------------
+#instalar playerctl
+XF86AudioPlay 
+	playerctl play-pause
+XF86AudioPause
+	playerctl play-pause
+XF86AudioNext
+	playerctl next
+XF86AudioPrev
+	playerctl previous
+
+#Keymap
+alt + space
+    setxkbmap {us,latam}
+
+#clearine instalar por yay o compilar
+super + Delete
+	clearine

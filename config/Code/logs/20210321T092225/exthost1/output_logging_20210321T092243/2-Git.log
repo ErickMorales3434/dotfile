@@ -1,0 +1,11 @@
+Buscando git en: git
+Usando GIT 2.31.0 desde git
+> git rev-parse --git-dir
+Open repository: /home/erick/Documentos/PROGRAMACION
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/erick/Documentos/PROGRAMACION/.git/refs/remotes/origin/main', is most likely packed.
+> git config --get commit.template
