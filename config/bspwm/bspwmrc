@@ -21,7 +21,7 @@ bspc rule -a telegram-desktop desktop='^'
 
 $HOME/.config/polybar/launch.sh
 
-feh --bg-scale /home/erick/.wal/rito.jpg
+feh --bg-scale /home/erick/.wal/1366x768.png
 #lxappearance
 picom --config $HOME/.config/picom/config.conf &
 #dunst &

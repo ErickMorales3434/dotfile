@@ -18,12 +18,13 @@ function asciiFinish(){
 	echo '╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝'
 	echo '					'
 }
-echo 'Instalacion de BSPWM'
-function InstallYay(){
+function installYay(){
 	sudo pacman -S git
+	cd 
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si PKGBUILD && cd 
+	cd dotfile
 }
-function instalador(){
+function appsPacman(){
 	echo 'actualizando base de datos'
 	sudo pacman -Syu
 	sleep 2
@@ -31,13 +32,13 @@ function instalador(){
 	sleep 2
 	sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim
 }
-function polybar_clearine(){
+function appsYay(){
 	yay -S polybar-git 
 	yay -S clearine-git
 	yay -S visual-studio-code-bin
 }
-function configurationWorkpaces(){
-	echo 'copiando archivos'
+function configuration_archives(){
+	echo 'Copiando archivos'
 	sleep 2
 	mkdir $HOME/.config
 	cp -rv config/bspwm $HOME/.config
@@ -63,21 +64,45 @@ function editXinitBash(){
 	echo 'alias sv='sudo nvim'' >> $HOME/.bashrc
 }
 
-function menu_installer(){
+function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
+	echo '1<------------Arch Linux'
+	echo '2<------------Debian Linux'
 	read input_distro
 	if [ "$input_distro" = "1" ]; then
-		echo 'distro arch'
-	elif [ "$input_distro" = "2" ]; then
-		echo 'distro debian'
+		echo '█████╗ ██████╗  ██████╗██╗  ██╗   '
+		echo '██╔══██╗██╔══██╗██╔════╝██║  ██║  '
+		echo '███████║██████╔╝██║     ███████║  '
+		echo '██╔══██║██╔══██╗██║     ██╔══██║  '
+		echo '██║  ██║██║  ██║╚██████╗██║  ██║  '
+		echo '╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝  '
+		echo '                                  '
+		echo '<---------------------------------->'
+		sleep 2
+		installYay
+		appsPacman
+		appsYay
+		configuration_archives
+		#editXinitBash
 
+
+
+	elif [ "$input_distro" = "2" ]; then
+		
+
+echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
+echo '██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║'
+echo '██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║'
+echo '██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║'
+echo '██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║'
+echo '╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝'
 	else
 		echo 'opcion erronea, vuelve a intentarlo' 
 	fi
 }
 ascii
-menu_installer
+menu
 asciiFinish
-#bspc wm -r
+bspc wm -r
 
 
