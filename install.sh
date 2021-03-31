@@ -105,7 +105,6 @@ function menu(){
 		echo '╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝'
 		echo 'opcion erronea, vuelve a intentarlo'                                   
 
-
 	fi
 }
 ascii
