@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install bspwm sxhkd rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr-l10n-es telegram-desktop obs-studio neovim	
+	sudo apt install bspwm sxhkd rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -57,7 +57,7 @@ function configuration_archives(){
 	cp -rv config/picom $HOME/.config
 	cp -rv config/polybar $HOME/.config
 	cp -rv config/rofi $HOME/.config
-	cp -rv config/wal $HOME/wal
+	cp -rv config/wal $HOME/.config/
 }
 function installFonts(){
 	echo 'Instalando fuentes'
@@ -74,7 +74,7 @@ function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
 	echo '1<------------Arch Linux'
 	echo '2<------------Debian Linux'
-	read input_distro
+	read -p "ingrese un numero " input_distro
 	if [ "$input_distro" = "1" ]; then
 		echo ' █████╗ ██████╗  ██████╗██╗  ██╗   '
 		echo '██╔══██╗██╔══██╗██╔════╝██║  ██║  '
@@ -114,7 +114,6 @@ function menu(){
 		echo '███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║'
 		echo '╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝'
 		echo 'opcion erronea, vuelve a intentarlo'                                   
-
 	fi
 }
 ascii
