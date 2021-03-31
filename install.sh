@@ -27,9 +27,18 @@ function appsPacman(){
 	echo 'actualizando base de datos'
 	sudo pacman -Syu
 	sleep 2
-	echo 'Instalando bspwm'
+	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
 	sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim
+}
+function appsApt(){
+	echo 'actualizando base de datos'
+	sudo apt update
+	sudo apt upgrade
+	sleep 2
+	echo 'Instalando bspwm y aplicaciones extras'
+	sleep 2
+	sudo apt install bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim	
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -92,6 +101,7 @@ function menu(){
 		echo '╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝'
 		
 		sleep 2
+		appsApt
 		configuration_archives
 		editXinitBash
 
