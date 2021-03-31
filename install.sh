@@ -83,7 +83,7 @@ function menu(){
 		appsPacman
 		appsYay
 		configuration_archives
-		#editXinitBash
+		editXinitBash
 
 
 
