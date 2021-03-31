@@ -48,7 +48,7 @@ function configuration_archives(){
 	cp -rv config/picom $HOME/.config
 	cp -rv config/polybar $HOME/.config
 	cp -rv config/rofi $HOME/.config
-	cp -rv config/wal $HOME/.wal
+	cp -rv config/wal $HOME/wal
 }
 function installFonts(){
 	echo 'Instalando fuentes'
@@ -82,7 +82,6 @@ function menu(){
 		configuration_archives
 		editXinitBash
 
-		bspc wm -r
 		asciiFinish
 	elif [ "$input_distro" = "2" ]; then
 		echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
@@ -96,7 +95,6 @@ function menu(){
 		configuration_archives
 		editXinitBash
 
-		bspc wm -r
 		asciiFinish
 	else
 		echo '███████╗██████╗ ██████╗  ██████╗ ██████╗' 
