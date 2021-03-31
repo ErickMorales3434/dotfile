@@ -1,5 +1,4 @@
 #!/bin/bash
-
 function ascii(){
 	echo '██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗'
 	echo '██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║'
@@ -40,7 +39,7 @@ function appsYay(){
 function configuration_archives(){
 	echo 'Copiando archivos'
 	sleep 2
-	mkdir $HOME/.config
+	#mkdir $HOME/.config
 	cp -rv config/bspwm $HOME/.config
 	cp -rv config/sxhkd $HOME/.config
 	cp -rv config/alacritty $HOME/.config
@@ -55,7 +54,6 @@ function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
 }
-
 function editXinitBash(){
 	touch $HOME/.xinitrc
 	echo 'sxhkd &' >> $HOME/.xinitrc
@@ -63,7 +61,6 @@ function editXinitBash(){
 	echo 'alias v=nvim' >> $HOME/.bashrc
 	echo 'alias sv='sudo nvim'' >> $HOME/.bashrc
 }
-
 function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
 	echo '1<------------Arch Linux'
@@ -85,24 +82,34 @@ function menu(){
 		configuration_archives
 		editXinitBash
 
-
-
+		bspc wm -r
+		asciiFinish
 	elif [ "$input_distro" = "2" ]; then
+		echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
+		echo '██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║'
+		echo '██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║'
+		echo '██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║'
+		echo '██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║'
+		echo '╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝'
 		
+		sleep 2
+		configuration_archives
+		editXinitBash
 
-echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
-echo '██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║'
-echo '██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║'
-echo '██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║'
-echo '██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║'
-echo '╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝'
+		bspc wm -r
+		asciiFinish
 	else
-		echo 'opcion erronea, vuelve a intentarlo' 
+		echo '███████╗██████╗ ██████╗  ██████╗ ██████╗' 
+		echo '██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗'
+		echo '█████╗  ██████╔╝██████╔╝██║   ██║██████╔╝'
+		echo '██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗'
+		echo '███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║'
+		echo '╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝'
+		echo 'opcion erronea, vuelve a intentarlo'                                   
+
+
 	fi
 }
 ascii
 menu
-asciiFinish
-bspc wm -r
-
 
