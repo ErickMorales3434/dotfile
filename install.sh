@@ -74,7 +74,7 @@ function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
 	echo '1<------------Arch Linux'
 	echo '2<------------Debian Linux'
-	read -p "ingrese un numero " input_distro
+	read -p "Ingrese un numero " input_distro
 	if [ "$input_distro" = "1" ]; then
 		echo ' █████╗ ██████╗  ██████╗██╗  ██╗   '
 		echo '██╔══██╗██╔══██╗██╔════╝██║  ██║  '
