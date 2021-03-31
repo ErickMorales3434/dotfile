@@ -62,6 +62,9 @@ function configuration_archives(){
 function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
+	#sudo cp -rv /fonts-bspwm /usr/share/fonts
+	cp -rv fonts-bspwm $HOME/Documentos/prueba/
+	chmod +w $HOME/Documentos/fonts-bspwm
 }
 function editXinitBash(){
 	touch $HOME/.xinitrc
@@ -74,7 +77,7 @@ function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
 	echo '1<------------Arch Linux'
 	echo '2<------------Debian Linux'
-	read -p "Ingrese un numero " input_distro
+	read -p "Ingrese un numero: " input_distro
 	if [ "$input_distro" = "1" ]; then
 		echo ' █████╗ ██████╗  ██████╗██╗  ██╗   '
 		echo '██╔══██╗██╔══██╗██╔════╝██║  ██║  '
@@ -129,5 +132,6 @@ function menu(){
 	fi
 }
 ascii
-menu
+#menu
+installFonts
 
