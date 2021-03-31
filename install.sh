@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim	
+	sudo apt install bspwm sxhkd rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
 }
 function appsYay(){
 	yay -S polybar-git 
