@@ -68,7 +68,7 @@ function editXinitBash(){
 	echo 'sxhkd &' >> $HOME/.xinitrc
 	echo 'exec bspwm' >> $HOME/.xinitrc
 	echo 'alias v=nvim' >> $HOME/.bashrc
-	echo 'alias sv='sudo nvim'' >> $HOME/.bashrc
+	echo "alias sv=sudo nvim'" >> $HOME/.bashrc
 }
 function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
