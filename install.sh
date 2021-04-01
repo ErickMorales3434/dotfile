@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
+	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -55,22 +55,22 @@ function configuration_archives(){
 	echo 'Copiando archivos'
 	sleep 2
 	mkdir $HOME/.config
-	cp -rv config/bspwm $HOME/.config
-	cp -rv config/sxhkd $HOME/.config
-	cp -rv config/alacritty $HOME/.config
-	cp -rv config/clearine $HOME/.config
-	cp -rv config/nvim $HOME/.config
-	cp -rv config/picom $HOME/.config
-	cp -rv config/polybar $HOME/.config
-	cp -rv config/rofi $HOME/.config
-	cp -rv config/wal $HOME/.config
+	cp -rv $HOME/dotfile/config/bspwm $HOME/.config
+	cp -rv $HOME/dotfile/config/sxhkd $HOME/.config
+	cp -rv $HOME/dotfile/config/alacritty $HOME/.config
+	cp -rv $HOME/dotfile/config/clearine $HOME/.config
+	cp -rv $HOME/dotfile/config/nvim $HOME/.config
+	cp -rv $HOME/dotfile/config/picom $HOME/.config
+	cp -rv $HOME/dotfile/config/polybar $HOME/.config
+	cp -rv $HOME/dotfile/config/rofi $HOME/.config
+	cp -rv $HOME/dotfile/config/wal $HOME/.config
 }
 function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
-	#sudo cp -rv /fonts-bspwm /usr/share/fonts
-	cp -rv fonts-bspwm $HOME/Documentos/prueba/
-	chmod +w $HOME/Documentos/fonts-bspwm
+	sudo cp -rv fonts-bspwm /usr/share/fonts
+	#cp -rv fonts-bspwm $HOME/Documentos/prueba/
+	chmod +w /usr/share/fonts/fonts-bspwm
 }
 function editXinitBash(){
 	touch $HOME/.xinitrc
@@ -78,6 +78,7 @@ function editXinitBash(){
 	echo 'exec bspwm' >> $HOME/.xinitrc
 	echo 'alias v=nvim' >> $HOME/.bashrc
 	echo "alias sv='sudo nvim'" >> $HOME/.bashrc
+	sudo dpkg-reconfigure lightdm
 }
 function menu(){
 	echo 'Ingrese el numero de su distribucion actual'
@@ -124,6 +125,7 @@ function menu(){
 		appsApt
 		appsGit
 		configuration_archives
+		installFonts
 		editXinitBash
 
 		asciiFinish
@@ -131,7 +133,7 @@ function menu(){
 		read -p "Ingrese una opcion: 1=SI, 2=NO: " restart_pc
 		if [ "$restart_pc" =  '1' ]; then
 			echo 'reiniciando'
-			reboot
+			sudo reboot
 		else
 			clear	
 		fi
