@@ -97,13 +97,13 @@ function menu(){
 		echo '╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝  '
 		echo '                                  '
 		echo '<---------------------------------->'
-		#sleep 2
-		#installYay
-		#appsPacman
-		#appsYay
-		#configuration_archives
-		#editXinitBash
-		#installFonts
+		sleep 2
+		installYay
+		appsPacman
+		appsYay
+		configuration_archives
+		editXinitBash
+		installFonts
 
 		asciiFinish
 
