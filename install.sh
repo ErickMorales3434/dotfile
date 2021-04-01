@@ -69,7 +69,7 @@ function configuration_archives(){
 function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
-	sudo cp -rv fonts-bspwm /usr/share/fonts
+	sudo cp -rv fonts_bspwm /usr/share/fonts/
 	#cp -rv fonts-bspwm $HOME/Documentos/prueba/
 	chmod +w /usr/share/fonts/fonts-bspwm
 }
