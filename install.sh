@@ -45,6 +45,12 @@ function appsYay(){
 	yay -S clearine-git
 	yay -S visual-studio-code-bin
 }
+function appsGit(){
+	cd $HOME && git clone https://github.com/polybar/polybar.git && cd polybar && ./build.sh
+	sudo apt install python3-pip
+	cd $HOME && git clone https://github.com/yuune/clearine.git && cd clearine && sudo pip install .
+
+}
 function configuration_archives(){
 	echo 'Copiando archivos'
 	sleep 2
@@ -87,25 +93,24 @@ function menu(){
 		echo '╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝  '
 		echo '                                  '
 		echo '<---------------------------------->'
-		sleep 2
-		installYay
-		appsPacman
-		appsYay
-		configuration_archives
-		editXinitBash
+		#sleep 2
+		#installYay
+		#appsPacman
+		#appsYay
+		#configuration_archives
+		#editXinitBash
+		#installFonts
 
 		asciiFinish
 
-		echo 'Reinciando Equipo'
-		echo '4'
-		sleep 1
-		echo '3'
-		sleep 1
-		echo '2'
-		sleep 1
-		echo '1'
-		sleep 1
-		reboot
+		echo 'Desea reiniciar el equipo?'
+		read -p "Ingrese una opcion: 1=SI, 2=NO: " restart_pc
+		if [ "$restart_pc" =  '1' ]; then
+			echo 'reiniciando'
+			reboot
+		else
+			clear	
+		fi
 
 	elif [ "$input_distro" = "2" ]; then
 		echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
@@ -117,6 +122,7 @@ function menu(){
 		
 		sleep 2
 		appsApt
+		appsGit
 		configuration_archives
 		editXinitBash
 
@@ -132,6 +138,6 @@ function menu(){
 	fi
 }
 ascii
-#menu
-installFonts
+menu
+
 
