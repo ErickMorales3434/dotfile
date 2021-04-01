@@ -69,9 +69,8 @@ function configuration_archives(){
 function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
-	sudo cp -rv fonts_bspwm /usr/share/fonts/
-	#cp -rv fonts-bspwm $HOME/Documentos/prueba/
-	sudo chmod +w /usr/share/fonts/fonts_bspwm
+	sudo cp -r -v $HOME/dotfile/fonts_bspwm /usr/share/fonts/
+	sudo chmod 755 /usr/share/fonts/fonts_bspwm/
 }
 function editXinitBash(){
 	echo 'alias v=nvim' >> $HOME/.bashrc
