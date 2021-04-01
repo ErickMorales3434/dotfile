@@ -313,7 +313,7 @@ click-left=clearine
 type=custom/text
 content = 
 content-margin = 0
-click-left= rofi -modi run -show drun -show-icons \-config /home/erick/.config/rofi/slate.rasi
+click-left= rofi -modi run -show drun -show-icons \-config $HOME/.config/rofi/slate.rasi
 ;
 [settings]
 pseudo-transparency = true
