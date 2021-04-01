@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install bspwm sxhkd rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
+	sudo apt install bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -54,7 +54,7 @@ function appsGit(){
 function configuration_archives(){
 	echo 'Copiando archivos'
 	sleep 2
-	#mkdir $HOME/.config
+	mkdir $HOME/.config
 	cp -rv config/bspwm $HOME/.config
 	cp -rv config/sxhkd $HOME/.config
 	cp -rv config/alacritty $HOME/.config
@@ -63,7 +63,7 @@ function configuration_archives(){
 	cp -rv config/picom $HOME/.config
 	cp -rv config/polybar $HOME/.config
 	cp -rv config/rofi $HOME/.config
-	cp -rv config/wal $HOME/.config/
+	cp -rv config/wal $HOME/.config
 }
 function installFonts(){
 	echo 'Instalando fuentes'
@@ -127,6 +127,14 @@ function menu(){
 		editXinitBash
 
 		asciiFinish
+		echo 'Desea reiniciar el equipo?'
+		read -p "Ingrese una opcion: 1=SI, 2=NO: " restart_pc
+		if [ "$restart_pc" =  '1' ]; then
+			echo 'reiniciando'
+			reboot
+		else
+			clear	
+		fi
 	else
 		echo '███████╗██████╗ ██████╗  ██████╗ ██████╗' 
 		echo '██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗'
