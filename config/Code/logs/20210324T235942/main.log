@@ -1,7 +1,0 @@
-[2021-03-24 23:59:43.176] [main] [info] update#setState idle
-[2021-03-24 23:59:43.220] [main] [error] SyntaxError: Unexpected token { in JSON at position 184
-    at JSON.parse (<anonymous>)
-    at ut.afterWindowOpen (/opt/visual-studio-code/resources/app/out/vs/code/electron-main/main.js:56:68755)
-[2021-03-25 00:00:13.182] [main] [info] update#setState checking for updates
-[2021-03-25 00:00:13.370] [main] [info] update#setState available for download
-[2021-03-25 00:06:07.496] [main] [info] update#setState idle

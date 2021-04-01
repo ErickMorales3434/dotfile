@@ -4,7 +4,7 @@ super + Return
 
 ## Iniciar Rofi
 alt + d
-	rofi -modi run -show drun -show-icons \-config /home/erick/.config/rofi/slate.rasi
+	rofi -modi run -show drun -show-icons \-config $HOME/.config/rofi/slate.rasi
 
 ## Control de Volumen (instalar alsa-utils --ejecutar alsamixer y activar el sonido) 
 XF86Audio{RaiseVolume,LowerVolume}
@@ -79,7 +79,7 @@ super + button{4,5}
 
 # Captura de patalla 
 Print
-	scrot -q 100 -d 3 ~/Imágenes/Screenshot-$(date "+%d-%m-%Y-%H:%M:%S").png
+	scrot -q 100 -d 3 $HOME/Imágenes/Screenshot-$(date "+%d-%m-%Y-%H:%M:%S").png
   
 # Control de brillo de panatalla (instalar brightnessctl)
 XF86MonBrightnessUp

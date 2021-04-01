@@ -64,6 +64,7 @@ function configuration_archives(){
 	cp -rv $HOME/dotfile/config/polybar $HOME/.config
 	cp -rv $HOME/dotfile/config/rofi $HOME/.config
 	cp -rv $HOME/dotfile/config/wal $HOME/.config
+	cp -rv $HOME/dotfile/xinitrc $HOME/.xinitrc
 }
 function installFonts(){
 	echo 'Instalando fuentes'
@@ -73,9 +74,6 @@ function installFonts(){
 	chmod +w /usr/share/fonts/fonts-bspwm
 }
 function editXinitBash(){
-	touch $HOME/.xinitrc
-	echo 'sxhkd &' >> $HOME/.xinitrc
-	echo 'exec bspwm' >> $HOME/.xinitrc
 	echo 'alias v=nvim' >> $HOME/.bashrc
 	echo "alias sv='sudo nvim'" >> $HOME/.bashrc
 	sudo dpkg-reconfigure lightdm

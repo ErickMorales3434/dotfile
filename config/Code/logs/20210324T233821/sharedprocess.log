@@ -1,5 +1,0 @@
-[2021-03-24 23:38:38.617] [sharedprocess] [info] Installing extension: ms-python.python
-[2021-03-24 23:38:38.622] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter
-[2021-03-24 23:38:38.626] [sharedprocess] [info] Installing extension: ms-vscode.vscode-typescript-next
-[2021-03-24 23:39:11.337] [sharedprocess] [info] Starting to clean up unused language packs.
-[2021-03-24 23:39:11.344] [sharedprocess] [info] Skipping directory 0604dced5ff2e66e504c946d43f4fb99.es. Language pack still in use.
