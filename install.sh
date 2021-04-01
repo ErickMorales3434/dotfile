@@ -46,7 +46,7 @@ function appsYay(){
 	yay -S visual-studio-code-bin
 }
 function appsGit(){
-	apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+	sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 	cd $HOME && git clone https://github.com/polybar/polybar.git && cd polybar && cd build && cmake .. && make -j$(nproc) && sudo make install
 	sudo apt remove i3-wm
 	cd $HOME && git clone https://github.com/yuune/clearine.git && cd clearine && sudo pip install .
