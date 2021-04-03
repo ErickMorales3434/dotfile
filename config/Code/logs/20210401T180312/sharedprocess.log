@@ -1,0 +1,14 @@
+[2021-04-01 18:03:24.968] [sharedprocess] [info] Deleted from disk ms-vscode.vscode-typescript-next /home/erick/.vscode/extensions/ms-vscode.vscode-typescript-next-4.3.20210330
+[2021-04-01 18:03:46.167] [sharedprocess] [info] Installing extension: ms-python.python
+[2021-04-01 18:04:00.653] [sharedprocess] [info] Starting to clean up unused language packs.
+[2021-04-01 18:06:19.883] [sharedprocess] [info] Downloaded extension: ms-python.python undefined
+[2021-04-01 18:06:22.995] [sharedprocess] [info] Extracted extension to /home/erick/.vscode/extensions/.ms-python.python-2021.3.680753044: ms-python.python
+[2021-04-01 18:06:22.995] [sharedprocess] [info] Renamed to /home/erick/.vscode/extensions/ms-python.python-2021.3.680753044
+[2021-04-01 18:06:23.000] [sharedprocess] [info] Installation completed. ms-python.python
+[2021-04-01 18:06:23.875] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter
+[2021-04-01 18:07:57.980] [sharedprocess] [info] Downloaded extension: ms-toolsai.jupyter undefined
+[2021-04-01 18:07:59.083] [sharedprocess] [info] Extracted extension to /home/erick/.vscode/extensions/.ms-toolsai.jupyter-2021.3.684299474: ms-toolsai.jupyter
+[2021-04-01 18:07:59.083] [sharedprocess] [info] Renamed to /home/erick/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474
+[2021-04-01 18:07:59.086] [sharedprocess] [info] Installation completed. ms-toolsai.jupyter
+[2021-04-01 18:07:59.157] [sharedprocess] [info] Extensions installed successfully: ms-toolsai.jupyter
+[2021-04-01 18:07:59.161] [sharedprocess] [info] Extensions installed successfully: ms-python.python

@@ -1,0 +1,7 @@
+[2021-04-01 18:23:44.679] [sharedprocess] [info] Installing extension: ms-vscode.vscode-typescript-next
+[2021-04-01 18:24:20.593] [sharedprocess] [info] Starting to clean up unused language packs.
+[2021-04-01 18:25:45.699] [sharedprocess] [info] Downloaded extension: ms-vscode.vscode-typescript-next undefined
+[2021-04-01 18:25:46.559] [sharedprocess] [info] Extracted extension to /home/erick/.vscode/extensions/.ms-vscode.vscode-typescript-next-4.3.20210401: ms-vscode.vscode-typescript-next
+[2021-04-01 18:25:46.559] [sharedprocess] [info] Renamed to /home/erick/.vscode/extensions/ms-vscode.vscode-typescript-next-4.3.20210401
+[2021-04-01 18:25:46.561] [sharedprocess] [info] Installation completed. ms-vscode.vscode-typescript-next
+[2021-04-01 18:25:46.673] [sharedprocess] [info] Extensions installed successfully: ms-vscode.vscode-typescript-next

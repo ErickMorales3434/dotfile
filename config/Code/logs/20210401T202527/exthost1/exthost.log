@@ -1,0 +1,13 @@
+[2021-04-01 20:25:29.070] [exthost] [info] extension host started
+[2021-04-01 20:25:29.169] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":false,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"onAuthenticationRequest:microsoft"}
+[2021-04-01 20:25:29.169] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/microsoft-authentication/dist/extension.js
+[2021-04-01 20:25:29.190] [exthost] [info] ExtensionService#_doActivateExtension ms-toolsai.jupyter {"startup":false,"extensionId":{"value":"ms-toolsai.jupyter","_lower":"ms-toolsai.jupyter"},"activationEvent":"onLanguage:python"}
+[2021-04-01 20:25:29.199] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/erick/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/out/client/extension
+[2021-04-01 20:25:29.351] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-04-01 20:25:29.351] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2021-04-01 20:25:29.354] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-04-01 20:25:29.354] [exthost] [info] ExtensionService#loadCommonJSModule file:///opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2021-04-01 20:25:29.369] [exthost] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer {"startup":true,"extensionId":{"value":"ritwickdey.LiveServer","_lower":"ritwickdey.liveserver"},"activationEvent":"*"}
+[2021-04-01 20:25:29.369] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/erick/.vscode/extensions/ritwickdey.liveserver-5.6.1/out/src/extension
+[2021-04-01 20:25:29.657] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-04-01 20:25:30.659] [exthost] [info] exiting with code 0

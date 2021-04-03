@@ -1,0 +1,17 @@
+vscode-userdata:/home/erick/.config/Code/User/settings.json {"mtime":1617412147217,"ctime":1616974116420,"size":370,"etag":"36m47m68jbt","orphaned":false}
+{
+    "workbench.colorTheme": "Dobri Next -A02- Bunker",
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 13,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "window.menuBarVisibility": "hidden",
+    "workbench.colorCustomizations": {
+    
+    }
+}

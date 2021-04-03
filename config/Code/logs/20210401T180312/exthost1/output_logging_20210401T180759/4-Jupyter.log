@@ -1,0 +1,15 @@
+Error 2021-04-01 18:08:00: Jupyter Extension (Error in Failed to update settings.json, method:fixSettingsFile): [EntryNotFound (FileSystemError): Unable to read file '/home/erick/Documentos/PROGRAMACION/.vscode/settings.json' (Error: Unable to resolve non-existing file '/home/erick/Documentos/PROGRAMACION/.vscode/settings.json')
+	at _handleError (/opt/visual-studio-code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:87:151863)
+	at processTicksAndRejections (internal/process/task_queues.js:97:5)
+	at async m.readFile (/home/erick/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/out/client/extension.js:49:863749)
+	at async g.fixSettingsFile (/home/erick/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/out/client/extension.js:47:292607)
+	at async Promise.all (index 1)
+	at async g.updateSettings (/home/erick/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/out/client/extension.js:47:294327)] {
+  code: 'FileNotFound'
+}
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py -c "import jupyter"
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py -c "import jupyter"
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py -c "import notebook"
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py -c "import notebook"
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py pip list
+> /usr/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2021.3.684299474/pythonFiles/pyvsc-run-isolated.py pip list
