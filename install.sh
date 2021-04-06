@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim	
+	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim polybar	
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -46,14 +46,7 @@ function appsYay(){
 	yay -S visual-studio-code-bin
 }
 function appsGit(){
-	sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-	cd $HOME && git clone https://github.com/polybar/polybar.git 
-	cd polybar 
-	cd build 
-	cmake ..
-	make -j$(nproc) 
-	sudo make install
-	
+
 	cd $HOME && git clone https://github.com/yuune/clearine.git && cd clearine && sudo pip install .
 
 }
@@ -75,8 +68,8 @@ function configuration_archives(){
 function installFonts(){
 	echo 'Instalando fuentes'
 	sleep 2
-	sudo cp -r -v $HOME/dotfile/fonts_bspwm /usr/share/fonts/
-	sudo chmod 755 /usr/share/fonts/fonts_bspwm/
+	mkdir $HOME/.fonts
+	sudo cp -r -v $HOME/dotfile/fonts_bspwm $HOME/.fonts/
 }
 function editXinitBash(){
 	echo 'alias v=nvim' >> $HOME/.bashrc
