@@ -29,7 +29,8 @@ function appsPacman(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-        sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim
+        sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils 
+		sudo pacman -S playerctl scrot firefox telegram-desktop obs-studio neovim
 }
 function appsApt(){
 	echo 'actualizando base de datos'
@@ -38,7 +39,8 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim polybar linux-firmware-nonfree firmware-misc-nonfree
+	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl 
+	sudo apt install scrot firefox-esr telegram-desktop obs-studio neovim polybar linux-firmware-nonfree firmware-misc-nonfree
 }
 function appsYay(){
 	yay -S polybar-git 
