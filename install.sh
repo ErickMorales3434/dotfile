@@ -6,7 +6,7 @@ function ascii(){
 	echo '██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║'
 	echo '██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║'
 	echo '╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝'
-	echo '												'
+	echo '	       									   '
 }
 function asciiFinish(){
 	echo '███████╗██╗███╗   ██╗██╗███████╗██╗  ██╗'
@@ -15,13 +15,13 @@ function asciiFinish(){
 	echo '██╔══╝  ██║██║╚██╗██║██║╚════██║██╔══██║'
 	echo '██║     ██║██║ ╚████║██║███████║██║  ██║'
 	echo '╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝'
-	echo '					'
+	echo '				                          '
 }
 function installYay(){
 	sudo pacman -S git
 	cd 
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si PKGBUILD && cd 
-	cd dotfile
+	cd $HOME/dotfile
 }
 function appsPacman(){
 	echo 'actualizando base de datos'
@@ -29,7 +29,7 @@ function appsPacman(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim
+        sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils playerctl scrot firefox telegram-desktop obs-studio neovim
 }
 function appsApt(){
 	echo 'actualizando base de datos'
@@ -38,7 +38,7 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim polybar	
+	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl scrot firefox-esr telegram-desktop obs-studio neovim polybar linux-firmware-nonfree firmware-misc-nonfree
 }
 function appsYay(){
 	yay -S polybar-git 
@@ -72,8 +72,7 @@ function installFonts(){
 	sudo cp -r -v $HOME/dotfile/fonts_bspwm $HOME/.fonts/
 }
 function editXinitBash(){
-	echo 'alias v=nvim' >> $HOME/.bashrc
-	echo "alias sv='sudo nvim'" >> $HOME/.bashrc
+	
 	sudo dpkg-reconfigure lightdm
 }
 function menu(){
