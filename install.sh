@@ -19,8 +19,8 @@ function asciiFinish(){
 }
 function installYay(){
 	sudo pacman -S git
-	cd 
-	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si PKGBUILD && cd 
+	cd
+	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si PKGBUILD && cd
 	cd $HOME/dotfile
 }
 function appsPacman(){
@@ -29,7 +29,7 @@ function appsPacman(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-        sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils 
+        sudo pacman -S bspwm sxhkd alacritty rofi python-pip feh brightnessctl alsa-utils
 		sudo pacman -S playerctl scrot firefox telegram-desktop obs-studio neovim
 }
 function appsApt(){
@@ -39,19 +39,18 @@ function appsApt(){
 	sleep 2
 	echo 'Instalando bspwm y aplicaciones extras'
 	sleep 2
-	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl 
+	sudo apt install lightdm bspwm sxhkd rofi python3-pip feh brightnessctl alsa-utils playerctl
 	sudo apt install scrot firefox-esr telegram-desktop obs-studio neovim polybar linux-firmware-nonfree firmware-misc-nonfree
 }
 function appsYay(){
-	yay -S polybar-git 
+	yay -S polybar-git
 	yay -S clearine-git
 	yay -S visual-studio-code-bin
 }
 function appsGit(){
-
 	cd $HOME && git clone https://github.com/yuune/clearine.git && cd clearine && sudo pip install .
-
 }
+sleep 5
 function configuration_archives(){
 	echo 'Copiando archivos'
 	sleep 2
@@ -74,7 +73,6 @@ function installFonts(){
 	sudo cp -r -v $HOME/dotfile/fonts_bspwm $HOME/.fonts/
 }
 function editXinitBash(){
-	
 	sudo dpkg-reconfigure lightdm
 }
 function menu(){
@@ -98,18 +96,15 @@ function menu(){
 		configuration_archives
 		editXinitBash
 		installFonts
-
 		asciiFinish
-
 		echo 'Desea reiniciar el equipo?'
 		read -p "Ingrese una opcion: 1=SI, 2=NO: " restart_pc
 		if [ "$restart_pc" =  '1' ]; then
 			echo 'reiniciando'
 			reboot
 		else
-			clear	
+			clear
 		fi
-
 	elif [ "$input_distro" = "2" ]; then
 		echo '██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗'
 		echo '██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║'
@@ -117,14 +112,12 @@ function menu(){
 		echo '██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║'
 		echo '██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║'
 		echo '╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝'
-		
 		sleep 2
 		appsApt
 		appsGit
 		configuration_archives
 		installFonts
 		editXinitBash
-
 		asciiFinish
 		echo 'Desea reiniciar el equipo?'
 		read -p "Ingrese una opcion: 1=SI, 2=NO: " restart_pc
@@ -132,16 +125,16 @@ function menu(){
 			echo 'reiniciando'
 			sudo reboot
 		else
-			clear	
+			clear
 		fi
 	else
-		echo '███████╗██████╗ ██████╗  ██████╗ ██████╗' 
+		echo '███████╗██████╗ ██████╗  ██████╗ ██████╗'
 		echo '██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗'
 		echo '█████╗  ██████╔╝██████╔╝██║   ██║██████╔╝'
 		echo '██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗'
 		echo '███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║'
 		echo '╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝'
-		echo 'opcion erronea, vuelve a intentarlo'                                   
+		echo 'opcion erronea, vuelve a intentarlo'
 	fi
 }
 ascii
